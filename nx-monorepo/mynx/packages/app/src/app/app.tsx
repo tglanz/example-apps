@@ -1,0 +1,61 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import styles from './app.module.scss';
+
+import {MyComponent, Text} from '@mynx/ui';
+import * as calc from '@mynx/calc';
+
+import NxWelcome from './nx-welcome';
+
+import { Route, Routes, Link } from 'react-router-dom';
+
+
+export function App() {
+
+
+  return (
+    <div>
+      <NxWelcome title="app" />
+      {/* START: routes */}
+      {/* These routes and navigation have been generated for you */}
+      {/* Feel free to move and update them to fit your needs */}
+      <br />
+      <hr />
+      <br />
+      <h1>1 + 2 = {calc.add(1, 2)}</h1>
+      <MyComponent />
+      <Text placeholder="asd" />
+      <div role="navigation">
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/page-2">Page 2</Link>
+          </li>
+        </ul>
+      </div>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <div>
+              This is the generated root route.{' '}
+              <Link to="/page-2">Click here for page 2.</Link>
+            </div>
+          }
+        />
+        <Route
+          path="/page-2"
+          element={
+            <div>
+              <Link to="/">Click here to go back to root page.</Link>
+            </div>
+          }
+        />
+      </Routes>
+      {/* END: routes */}
+    </div>
+  );
+}
+
+export default App;
