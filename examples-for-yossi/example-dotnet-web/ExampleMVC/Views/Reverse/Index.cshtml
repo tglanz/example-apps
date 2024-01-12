@@ -1,0 +1,57 @@
+@model ReverseModel
+
+@{
+    ViewData["Title"] = "Reverse";
+}
+
+<div class="text-center">
+    <h2>Index</h2>
+    <div style="width: 256px">
+        <h3>User</h3>
+        <form method="post" action="/reverse/user">
+            <div>
+                <label for="name">Name: </label>
+                <input type="text" name="name" placeholder="Your Name" />
+            </div>
+            <div>
+                <label for="gender">Gender: </label>
+                <select name="gender">
+                    <option>Male</option>
+                    <option>Female</option>
+                </select>
+            </div>
+            <div>
+                <button type="submit">Reverse User</button>
+            </div>
+        </form>
+    </div>
+
+    <div style="width: 256px">
+        <h3>Car</h3>
+        <form method="post" action="/reverse/car">
+            <div>
+                <label for="manufacturer">Manufacturer: </label>
+                <select name="manufacturer">
+                    @foreach (var manufacturer in Model.AvailableCarManufacturers)
+                    {
+                        <option>@manufacturer</option>    
+                    }
+                </select>
+            </div>
+            <div>
+                <label for="model">Model: </label>
+                <input type="text" name="model" placeholder="Model" />
+            </div>
+            <div>
+                <button type="submit">Reverse Car</button>
+            </div>
+        </form>
+    </div>
+
+    @if (Model.HasOutput)
+    {
+        <div>
+            <p>Output: @Model.Output</p>
+        </div>
+    }
+</div>

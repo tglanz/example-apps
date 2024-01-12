@@ -1,0 +1,43 @@
+@{
+    ViewData["Title"] = "Client Side Requests";
+}
+
+<script>
+    async function doGetData() {
+        const response = await fetch("/clientsiderequests/sampledata")
+        const body = await response.json();
+        
+        const container = document.getElementById("data-container");
+        container.innerHTML = "";
+
+        const element = document.createElement("h3");
+        element.innerHTML = body.value;
+        container.appendChild(element);
+    }
+
+    async function onOptionChange() {
+        const list = document.getElementById("list");
+        if(list.value == 'A'){
+            alert(list.value);
+        }
+        else{
+            console.log(list.value)
+        }
+
+    }
+</script>
+
+<h1>New web page</h1>
+<label>ClientSideRequests</label>
+
+<button onclick="doGetData()">
+    Get Data
+</button>
+
+<select id="list" onchange="onOptionChange()">
+    <option>A</option>
+    <option>B</option>
+</select>
+
+<div id="data-container">
+</div>
