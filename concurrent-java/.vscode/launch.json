@@ -1,0 +1,24 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Hello World",
+            "request": "launch",
+            "mainClass": "tglanz.App",
+            "projectName": "app",
+            "args": "hello-world"
+        },
+        {
+            "type": "java",
+            "name": "Calculate Pi",
+            "request": "launch",
+            "mainClass": "tglanz.App",
+            "projectName": "app",
+            "args": "calculate-pi"
+        }
+    ]
+}
